@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void mergeArray(int *arr1, int *arr2, int *arr3, int n)
+{
+    int i, j = 0;
+
+    // Copy first array
+    for(i = 0; i < n; i++)
+    {
+        arr3[j] = arr1[i];
+        j++;
+    }
+
+    // Copy second array
+    for(i = 0; i < n; i++)
+    {
+        arr3[j] = arr2[i];
+        j++;
+    }
+
+    printf("\nMerged Array:\n");
+
+    for(i = 0; i < 2 * n; i++)
+    {
+        printf("%d ", arr3[i]);
+    }
+}
+
+int main()
+{
+    int *arr1, *arr2, *arr3;
+    int n, i;
+
+    printf("Enter size of each array: ");
+    scanf("%d", &n);
+
+    arr1 = (int *)malloc(n * sizeof(int));
+    arr2 = (int *)malloc(n * sizeof(int));
+    arr3 = (int *)malloc(2 * n * sizeof(int));
+
+    if(arr1 == NULL || arr2 == NULL || arr3 == NULL)
+    {
+        printf("Memory Allocation Failed");
+        return 0;
+    }
+
+    printf("\nEnter elements of First Array:\n");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("\nEnter elements of Second Array:\n");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr2[i]);
+    }
+
+    mergeArray(arr1, arr2, arr3, n);
+
+    free(arr1);
+    free(arr2);
+    free(arr3);
+
+    return 0;
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    char str[100], temp;
+    int i, last;
+
+    printf("Enter a string: ");
+    scanf("%99s", str);
+
+    for(i = 0; str[i] != '\0'; i++)
+        ;
+
+    last = i - 1;
+
+    temp = str[0];
+    str[0] = str[last];
+    str[last] = temp;
+
+    printf("Result: %s", str);
+
+    return 0;
+}

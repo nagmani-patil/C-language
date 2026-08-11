@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+    char str[100], target;
+    int i, found = 0;
+
+    printf("Enter a string: ");
+    scanf("%99s", str);
+
+    printf("Enter character to search: ");
+    scanf(" %c", &target);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] == target)
+        {
+            found = 1;
+            break;
+        }
+    }
+
+    if(found)
+        printf("Character found at index %d", i);
+    else
+        printf("Character not found");
+
+    return 0;
+}

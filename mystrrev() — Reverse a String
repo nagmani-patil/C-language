@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+void mystrrev(char str[])
+{
+    int i = 0, j = 0;
+    char temp;
+
+    // Find length
+    while (str[j] != '\0')
+    {
+        j++;
+    }
+
+    j--;   // Last character index
+
+    // Reverse using two pointers
+    while (i < j)
+    {
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+
+        i++;
+        j--;
+    }
+}
+
+int main()
+{
+    char str[100];
+
+    printf("Enter a string: ");
+    scanf("%99s", str);
+
+    mystrrev(str);
+
+    printf("Reversed string = %s", str);
+
+    return 0;
+}

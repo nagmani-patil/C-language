@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+char toLower(char ch)
+{
+    if (ch >= 'A' && ch <= 'Z')
+    {
+        ch = ch + ('a' - 'A');
+    }
+
+    return ch;
+}
+
+int mystrcasecmp(char str1[], char str2[])
+{
+    int i = 0;
+    char ch1, ch2;
+
+    while (str1[i] != '\0' && str2[i] != '\0')
+    {
+        ch1 = toLower(str1[i]);
+        ch2 = toLower(str2[i]);
+
+        if (ch1 != ch2)
+        {
+            return ch1 - ch2;
+        }
+
+        i++;
+    }
+
+    return toLower(str1[i]) - toLower(str2[i]);
+}
+
+int main()
+{
+    char str1[100], str2[100];
+    int result;
+
+    printf("Enter first string: ");
+    scanf("%99s", str1);
+
+    printf("Enter second string: ");
+    scanf("%99s", str2);
+
+    result = mystrcasecmp(str1, str2);
+
+    if (result == 0)
+        printf("Strings are equal");
+    else if (result < 0)
+        printf("First string is smaller");
+    else
+        printf("First string is greater");
+
+    return 0;
+}

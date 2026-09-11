@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char a[] = "ABC";
+    char b[] = "ABC";
+
+    int result = memcmp(a, b, 3);
+
+    if(result == 0)
+        printf("Memory blocks are equal\n");
+    else
+        printf("Memory blocks are different\n");
+
+    return 0;
+}

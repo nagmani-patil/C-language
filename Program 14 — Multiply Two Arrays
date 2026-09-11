@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void multiplyArrays(int a[], int b[], int result[], int n)
+{
+    for(int i = 0; i < n; i++)
+    {
+        result[i] = a[i] * b[i];
+    }
+}
+
+int main()
+{
+    int a[3] = {2, 3, 4};
+    int b[3] = {5, 6, 7};
+    int result[3];
+
+    multiplyArrays(a, b, result, 3);
+
+    for(int i = 0; i < 3; i++)
+    {
+        printf("%d ", result[i]);
+    }
+
+    return 0;
+}

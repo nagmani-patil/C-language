@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+void countPositiveNegative(int arr[], int n)
+{
+    int positive = 0;
+    int negative = 0;
+
+    for(int i = 0; i < n; i++)
+    {
+        if(arr[i] > 0)
+            positive++;
+        else if(arr[i] < 0)
+            negative++;
+    }
+
+    printf("Positive = %d\n", positive);
+    printf("Negative = %d\n", negative);
+}
+
+int main()
+{
+    int arr[6] = {-10, 20, -30, 40, 50, -60};
+
+    countPositiveNegative(arr, 6);
+
+    return 0;
+}

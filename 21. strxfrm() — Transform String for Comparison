@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+int main()
+{
+    char source[] = "apple";
+    char transformed[100];
+
+    setlocale(LC_ALL, "");
+
+    size_t length = strxfrm(
+        transformed,
+        source,
+        sizeof(transformed)
+    );
+
+    printf("Transformed length: %zu\n", length);
+
+    return 0;
+}

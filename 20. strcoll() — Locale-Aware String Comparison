@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+int main()
+{
+    char str1[] = "apple";
+    char str2[] = "banana";
+
+    setlocale(LC_ALL, "");
+
+    int result = strcoll(str1, str2);
+
+    if(result == 0)
+        printf("Strings are equal\n");
+    else if(result < 0)
+        printf("First string comes before second\n");
+    else
+        printf("First string comes after second\n");
+
+    return 0;
+}

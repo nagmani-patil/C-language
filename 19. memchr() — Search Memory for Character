@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[] = "Hello World";
+
+    char *result = memchr(str, 'W', strlen(str));
+
+    if(result != NULL)
+        printf("Character found\n");
+    else
+        printf("Character not found\n");
+
+    return 0;
+}

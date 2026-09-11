@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int findMaximum(int arr[], int n)
+{
+    int max = arr[0];
+
+    for(int i = 1; i < n; i++)
+    {
+        if(arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+
+    return max;
+}
+
+int main()
+{
+    int arr[5] = {40, 10, 50, 20, 30};
+
+    printf("Maximum = %d", findMaximum(arr, 5));
+
+    return 0;
+}

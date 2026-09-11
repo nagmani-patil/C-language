@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <limits.h>
+
+int secondLargest(int arr[], int n)
+{
+    int largest = INT_MIN;
+    int second = INT_MIN;
+
+    for(int i = 0; i < n; i++)
+    {
+        if(arr[i] > largest)
+        {
+            second = largest;
+            largest = arr[i];
+        }
+        else if(arr[i] > second && arr[i] != largest)
+        {
+            second = arr[i];
+        }
+    }
+
+    return second;
+}
+
+int main()
+{
+    int arr[5] = {10, 50, 30, 40, 20};
+
+    printf("Second largest = %d",
+           secondLargest(arr, 5));
+
+    return 0;
+}
